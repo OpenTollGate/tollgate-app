@@ -29,4 +29,15 @@ impl<R: Runtime> Androidwifi<R> {
     ).collect();
     Ok(wifidetails)
   }
+
+  pub fn connect_wifi(&self, payload: ConnectWifiPayload) -> crate::Result<PingResponse> {
+    todo!()
+  }
+  pub fn get_current_wifi_details(&self, payload: Empty) -> crate::Result<PingResponse> {
+    todo!()
+  }
+
+  pub fn get_mac_address(&self, payload: Empty) -> crate::Result<MacAddress> {
+    todo!()
+  }
 }

@@ -16,7 +16,7 @@ export default class AndroidOperatingSystem implements IOperatingSystem {
 
         // Step 1, rebind the app to the wifi network, so the whoami request won't be sent over any active cellular connection
         try{
-            await invoke("plugin:androidwifi|getMacAddress", { }); // only rebinds
+            await invoke("plugin:androidwifi|get_mac_address", { }); // only rebinds
         } catch (e) {
             console.error("could not get mac native", e);
         }
@@ -37,7 +37,7 @@ export default class AndroidOperatingSystem implements IOperatingSystem {
     }
 
     async getCurrentNetwork(): Promise<ConnectedNetworkInfo> {
-        const currentNetworkInfo = await invoke("plugin:androidwifi|getCurrentWifiDetails", { })
+        const currentNetworkInfo = await invoke("plugin:androidwifi|get_current_wifi_details", { })
         const details = JSON.parse(currentNetworkInfo.wifiDetails)
 
         const ssid = details.ssid.replaceAll('"',''); // TODO: bug in serialization from android
@@ -49,17 +49,14 @@ export default class AndroidOperatingSystem implements IOperatingSystem {
     }
 
     async getAvailableNetworks(): Promise<NetworkInfo[]> {
-        let response = await invoke("plugin:androidwifi|getWifiDetails", { payload: { value: "" } });
+        let response = await invoke("plugin:androidwifi|get_wifi_details", { payload: { value: "" } });
         const networks: NetworkInfo[] = JSON.parse(response.wifis);
 
         return networks;
     }
 
     async connectNetwork(ssid: string): Promise<void> {
-        let response = await invoke("plugin:androidwifi|connectWifi", { ssid: ssid });
+        let response = await invoke("plugin:androidwifi|connect_wifi", { ssid: ssid });
         console.log("response for connecting to " + ssid + " = " + JSON.stringify(response));
     }
-
-
-
 }

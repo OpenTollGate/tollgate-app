@@ -30,3 +30,15 @@ pub struct InformationElement {
 pub struct PingResponse {
   pub wifis: Option<Vec<WifiDetails>>,
 }
+
+#[derive(Debug, Clone, Default, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct MacAddress {
+    pub mac_address: String,
+}
+
+#[derive(Debug, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct ConnectWifiPayload {
+    pub ssid: String,
+}

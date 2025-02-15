@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-get-mac-address"
+description = "Enables the get_mac_address command without any pre-configured scope."
+commands.allow = ["get_mac_address"]
+
+[[permission]]
+identifier = "deny-get-mac-address"
+description = "Denies the get_mac_address command without any pre-configured scope."
+commands.deny = ["get_mac_address"]
