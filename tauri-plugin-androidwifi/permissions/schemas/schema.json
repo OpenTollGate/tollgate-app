@@ -295,6 +295,16 @@
       "type": "string",
       "oneOf": [
         {
+          "description": "Enables the connect_wifi command without any pre-configured scope.",
+          "type": "string",
+          "const": "allow-connect-wifi"
+        },
+        {
+          "description": "Denies the connect_wifi command without any pre-configured scope.",
+          "type": "string",
+          "const": "deny-connect-wifi"
+        },
+        {
           "description": "Enables the getWifiDetails command without any pre-configured scope.",
           "type": "string",
           "const": "allow-getWifiDetails"
@@ -320,14 +330,34 @@
           "const": "deny-getWifiDetails"
         },
         {
-          "description": "Enables the ping command without any pre-configured scope.",
+          "description": "Enables the get_current_wifi_details command without any pre-configured scope.",
           "type": "string",
-          "const": "allow-ping"
+          "const": "allow-get-current-wifi-details"
         },
         {
-          "description": "Denies the ping command without any pre-configured scope.",
+          "description": "Denies the get_current_wifi_details command without any pre-configured scope.",
           "type": "string",
-          "const": "deny-ping"
+          "const": "deny-get-current-wifi-details"
+        },
+        {
+          "description": "Enables the get_mac_address command without any pre-configured scope.",
+          "type": "string",
+          "const": "allow-get-mac-address"
+        },
+        {
+          "description": "Denies the get_mac_address command without any pre-configured scope.",
+          "type": "string",
+          "const": "deny-get-mac-address"
+        },
+        {
+          "description": "Enables the get_wifi_details command without any pre-configured scope.",
+          "type": "string",
+          "const": "allow-get-wifi-details"
+        },
+        {
+          "description": "Denies the get_wifi_details command without any pre-configured scope.",
+          "type": "string",
+          "const": "deny-get-wifi-details"
         },
         {
           "description": "Default permissions for the plugin",

@@ -2,7 +2,10 @@
 
 Default permissions for the plugin
 
-- `allow-getWifiDetails`
+- `allow-get_wifi_details`
+- `allow-get_mac_address`
+- `allow-get_current_wifi_details`
+- `allow-connect_wifi`
 
 ## Permission Table
 
@@ -12,6 +15,32 @@ Default permissions for the plugin
 <th>Description</th>
 </tr>
 
+
+<tr>
+<td>
+
+`androidwifi:allow-connect-wifi`
+
+</td>
+<td>
+
+Enables the connect_wifi command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`androidwifi:deny-connect-wifi`
+
+</td>
+<td>
+
+Denies the connect_wifi command without any pre-configured scope.
+
+</td>
+</tr>
 
 <tr>
 <td>
@@ -81,12 +110,12 @@ Denies the getWifiDetails command without any pre-configured scope.
 <tr>
 <td>
 
-`androidwifi:allow-ping`
+`androidwifi:allow-get-current-wifi-details`
 
 </td>
 <td>
 
-Enables the ping command without any pre-configured scope.
+Enables the get_current_wifi_details command without any pre-configured scope.
 
 </td>
 </tr>
@@ -94,12 +123,64 @@ Enables the ping command without any pre-configured scope.
 <tr>
 <td>
 
-`androidwifi:deny-ping`
+`androidwifi:deny-get-current-wifi-details`
 
 </td>
 <td>
 
-Denies the ping command without any pre-configured scope.
+Denies the get_current_wifi_details command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`androidwifi:allow-get-mac-address`
+
+</td>
+<td>
+
+Enables the get_mac_address command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`androidwifi:deny-get-mac-address`
+
+</td>
+<td>
+
+Denies the get_mac_address command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`androidwifi:allow-get-wifi-details`
+
+</td>
+<td>
+
+Enables the get_wifi_details command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`androidwifi:deny-get-wifi-details`
+
+</td>
+<td>
+
+Denies the get_wifi_details command without any pre-configured scope.
 
 </td>
 </tr>

@@ -1,5 +1,4 @@
 use serde::de::DeserializeOwned;
-use serde::{Serialize};
 use tauri::{
   plugin::{PluginApi, PluginHandle},
   AppHandle, Runtime,
@@ -20,12 +19,6 @@ pub fn init<R: Runtime, C: DeserializeOwned>(
   #[cfg(target_os = "ios")]
   let handle = api.register_ios_plugin(init_plugin_androidwifi)?;
   Ok(Androidwifi(handle))
-}
-
-#[derive(Serialize)]
-#[serde(rename_all = "camelCase")]
-pub struct ConnectWifiPayload {
-    pub ssid: String,
 }
 
 /// Access to the androidwifi APIs.
@@ -50,6 +43,13 @@ impl<R: Runtime> Androidwifi<R> {
     self
       .0
       .run_mobile_plugin("getCurrentWifiDetails", payload)
+      .map_err(Into::into)
+  }
+
+  pub fn get_mac_address(&self, payload: Empty) -> crate::Result<MacAddress> {
+    self
+      .0
+      .run_mobile_plugin("getMacAddress", payload)
       .map_err(Into::into)
   }
 }

@@ -1,3 +1,8 @@
 [default]
 description = "Default permissions for the plugin"
-permissions = ["allow-getWifiDetails"]
+permissions = [
+    "allow-get_wifi_details",
+    "allow-get_mac_address",
+    "allow-get_current_wifi_details",
+    "allow-connect_wifi",
+    ]

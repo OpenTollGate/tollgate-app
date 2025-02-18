@@ -4,15 +4,5 @@
   "windows": ["main"],
   "platforms": ["linux", "macOS", "windows"],
   "permissions": [
-    {
-      "identifier": "shell:allow-execute",
-      "allow": [
-        {
-          "name": "run-networksetup",
-          "cmd": "networksetup",
-          "args": true
-        }
-      ]
-    }
   ]
 }

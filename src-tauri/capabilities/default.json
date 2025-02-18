@@ -17,11 +17,11 @@
   "permissions": [
     "core:default",
     "opener:default",
-    "androidwifi:allow-getWifiDetails",
-    "androidwifi:allow-connectWifi",
-    "androidwifi:allow-getCurrentWifiDetails",
-    "androidwifi:allow-getMacAddress",
     "http:default",
+    "androidwifi:allow-connect-wifi",
+    "androidwifi:allow-get-current-wifi-details",
+    "androidwifi:allow-get-mac-address",
+    "androidwifi:allow-get-wifi-details",
     {
       "identifier": "http:default",
       "allow": [
